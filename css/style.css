@@ -58,6 +58,7 @@ main {
   border: none;
   outline: none;
   cursor: pointer;
+  box-shadow: 3px 3px 3px black;
 }
 .row button:hover {
   background-color: rgba(255, 0, 0, 0.568);
