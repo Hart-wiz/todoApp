@@ -75,6 +75,8 @@ main {
   padding: 16px 8px 12px 50px;
   cursor: pointer;
   user-select: none;
+  width: 80%;
+  overflow-wrap: break-word;
 }
 
 .todo-app ul li:before {
@@ -86,13 +88,42 @@ main {
   background-image: url(../assets/circle.svg);
   background-size: cover;
   background-position: center;
-  left: 16%;
+  left: 18%;
   margin-top: -4.8px;
 }
 
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+ul li.checked::before {
+  background-image: url(../assets/check-circle.svg);
+}
+
+ul span {
+  position: absolute;
+  font-size: 1rem;
+  background-color: rgba(39, 50, 59, 0.014);
+  border-radius: 50%;
+  padding: 0.5rem 0.66rem;
+  margin-top: -7px;
+  left: 70%;
+}
+
+ul span:hover {
+  background-color: #5555553f;
+}
+
+.list {
+  background-color: black;
+}
+/* styling for larger screen */
 @media screen and (min-width: 500px) {
   .todo-app ul li:before {
-    left: 30%;
+    left: 29%;
+  }
+  ul li span {
+    left: 65%;
   }
 }
 
