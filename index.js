@@ -13,6 +13,7 @@ function addTask() {
     li.appendChild(span);
   }
   inputBox.value = "";
+  saveData();
 }
 
 listContainer.addEventListener(
@@ -23,6 +24,20 @@ listContainer.addEventListener(
     } else if (e.target.tagName === "SPAN") {
       e.target.parentElement.remove("LI");
     }
+    saveData();
   },
   false
 );
+
+// function to save data in browser
+
+function saveData() {
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+
+// to show the list saved when browser is refreshed
+function showData() {
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+
+showData();
